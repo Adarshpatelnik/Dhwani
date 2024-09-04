@@ -57,18 +57,18 @@ default:
   MSSQL_PORT: 1433
   MSSQL_USER: SA
   # MySQL
-  MYSQL_DATABASE: database
-  MYSQL_HOST: host
-  MYSQL_PASSWORD: password
+  MYSQL_DATABASE: EIROKID_JANTAROAD_REWA
+  MYSQL_HOST: b2b-s360.chpxcjdw4aj9.ap-south-1.rds.amazonaws.com
+  MYSQL_PASSWORD: b2b@123
   MYSQL_PORT: 3306
-  MYSQL_USER: root
+  MYSQL_USER: B2B_Admin
   # PostgresSQL
   POSTGRES_CONNECT_TIMEOUT: 10
-  POSTGRES_DBNAME: "{{ env_var('POSTGRES_DB') }}"
-  POSTGRES_SCHEMA: "{{ env_var('POSTGRES_SCHEMA') }}"
-  POSTGRES_USER: "{{ env_var('POSTGRES_USER') }}"
-  POSTGRES_PASSWORD: "{{ env_var('POSTGRES_PASSWORD') }}"
-  POSTGRES_HOST: "{{ env_var('PG_HOST') }}"
+  POSTGRES_DBNAME: dhwani_db
+  POSTGRES_SCHEMA: stg
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: Rahul@1234
+  POSTGRES_HOST: host.docker.internal
   POSTGRES_PORT: 5432
   # Redshift
   REDSHIFT_SCHEMA: public # Optional

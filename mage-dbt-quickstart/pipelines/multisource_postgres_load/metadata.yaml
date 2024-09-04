@@ -1,0 +1,194 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - stg_load_postgres
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: MySql_src
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: mysql_src
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - stg_load_postgres
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Flat_File_src
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: flat_file_src
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - stg_load_postgres
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: api_src_csv
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: api_src_csv
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - stg_load_postgres
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: api_src_json
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: api_src_json
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: data_loaders/mys_pos_pipline_trigger.py
+    file_source:
+      path: data_loaders/mys_pos_pipline_trigger.py
+  downstream_blocks:
+  - dbt/dhwani_dbt/models/example/ACADEMIC_MARKS
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: mys_pos_pipline_trigger
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - stg_load_postgres
+  uuid: mys_pos_pipline_trigger
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    data_provider: postgres
+    data_provider_profile: default
+    dbt: {}
+    disable_query_preprocessing: false
+    export_write_policy: replace
+    limit: 0
+    upstream_block_configuration:
+      api_src_csv:
+        table_name: stg.api_data
+      api_src_json:
+        table_name: stg.api_data_json
+      flat_file_src:
+        table_name: stg.netflix
+      mysql_src:
+        table_name: stg.marks
+    use_raw_sql: true
+  downstream_blocks:
+  - mys_pos_pipline_trigger
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: stg_load_postgres
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - api_src_csv
+  - mysql_src
+  - flat_file_src
+  - api_src_json
+  uuid: stg_load_postgres
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/dhwani_dbt
+    file_path: dbt/dhwani_dbt/models/example/ACADEMIC_MARKS.sql
+    file_source:
+      path: dbt/dhwani_dbt/models/example/ACADEMIC_MARKS.sql
+      project_path: dbt/dhwani_dbt
+  downstream_blocks:
+  - dbt/dhwani_dbt/models/example/academic_marks_bar_chart_w7
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/dhwani_dbt/models/example/academic_marks
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - mys_pos_pipline_trigger
+  uuid: dbt/dhwani_dbt/models/example/ACADEMIC_MARKS
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-09-04 07:03:08.145239+00:00'
+data_integration: null
+description: this pipeline will load data from the different source and load the data
+  into local postgres stg schema and then through dbt etl is performed and load the
+  data into the prod schema
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: multisource_postgres_load
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: multisource_postgres_load
+variables_dir: /home/src/mage_data/mage-dbt-quickstart
+widgets:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    chart_style: vertical
+    chart_type: bar chart
+    group_by:
+    - academic_year
+    metrics:
+    - aggregation: count
+      column: grand_total
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/dhwani_dbt/models/example/ACADEMIC_MARKS_bar chart_w7
+  retry_config: null
+  status: executed
+  timeout: null
+  type: chart
+  upstream_blocks:
+  - dbt/dhwani_dbt/models/example/ACADEMIC_MARKS
+  uuid: dbt/dhwani_dbt/models/example/academic_marks_bar_chart_w7

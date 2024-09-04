@@ -1,0 +1,14 @@
+triggers:
+- description: null
+  envs: []
+  last_enabled_at: null
+  name: righteous spell
+  pipeline_uuid: mysl_to_postgres_stg
+  schedule_interval: null
+  schedule_type: null
+  settings: null
+  sla: null
+  start_time: null
+  status: inactive
+  token: 385d40ba4d7f4dce95fddf7d0fc0583d
+  variables: null

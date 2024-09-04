@@ -1,0 +1,8 @@
+config:
+  database: dhwani_db
+  host: host.docker.internal
+  password: Rahul@1234
+  port: 5432
+  schema: stg
+  username: postgres
+destination: postgresql

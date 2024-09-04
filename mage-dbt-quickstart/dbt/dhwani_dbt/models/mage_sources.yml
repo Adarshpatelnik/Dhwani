@@ -1,0 +1,21 @@
+sources:
+- description: Dataframes Mage upstream blocks
+  loader: mage
+  name: mage_dhwani_dbt
+  schema: prod
+  tables:
+  - description: Dataframe for block `cur_customers` of the `simple_dbt_python_pipeline`
+      mage pipeline.
+    identifier: mage_simple_dbt_python_pipeline_cur_customers
+    meta:
+      block_uuid: cur_customers
+      pipeline_uuid: simple_dbt_python_pipeline
+    name: simple_dbt_python_pipeline_cur_customers
+  - description: Dataframe for block `mys_pos_pipline_trigger` of the `multisource_postgres_load`
+      mage pipeline.
+    identifier: mage_multisource_postgres_load_mys_pos_pipline_trigger
+    meta:
+      block_uuid: mys_pos_pipline_trigger
+      pipeline_uuid: multisource_postgres_load
+    name: multisource_postgres_load_mys_pos_pipline_trigger
+version: 2

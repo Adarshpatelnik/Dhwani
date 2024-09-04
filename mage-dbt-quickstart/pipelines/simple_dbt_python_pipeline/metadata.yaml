@@ -4,8 +4,9 @@ blocks:
   configuration:
     dbt:
       command: seed
-    dbt_profile_target: ''
+    dbt_profile_target: null
     dbt_project_name: jaffle_shop
+    disable_query_preprocessing: false
     export_write_policy: append
     use_raw_sql: false
   downstream_blocks:
@@ -27,7 +28,7 @@ blocks:
     dbt: {}
     dbt_profile_target: null
     export_write_policy: append
-    file_path: jaffle_shop/models/staging/stg_customers.sql
+    file_path: dbt/jaffle_shop/models/staging/stg_customers.sql
     limit: 1000
     use_raw_sql: false
   downstream_blocks:
@@ -65,7 +66,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - dbt/dhwani_dbt/models/example/my_first_dbt_model
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -78,6 +80,29 @@ blocks:
   upstream_blocks:
   - clean_stage
   uuid: cur_customers
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/dhwani_dbt
+    file_path: dbt/dhwani_dbt/models/example/my_first_dbt_model.sql
+    file_source:
+      path: dbt/dhwani_dbt/models/example/my_first_dbt_model.sql
+      project_path: dbt/dhwani_dbt
+    limit: 1000
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/dhwani_dbt/models/example/my_first_dbt_model
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - cur_customers
+  uuid: dbt/dhwani_dbt/models/example/my_first_dbt_model
+cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
@@ -92,11 +117,14 @@ executor_type: null
 extensions: {}
 name: simple_dbt_python_pipeline
 notification_config: {}
+remote_variables_dir: null
 retry_config: {}
 run_pipeline_in_one_process: false
+settings:
+  triggers: null
 spark_config: {}
 tags: []
 type: python
-updated_at: '2023-09-13 21:04:13'
 uuid: simple_dbt_python_pipeline
+variables_dir: /home/src/mage_data/mage-dbt-quickstart
 widgets: []

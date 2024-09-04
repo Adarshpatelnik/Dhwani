@@ -1,0 +1,13 @@
+config:
+  database: EIROKID_JANTAROAD_REWA
+  host: b2b-s360.chpxcjdw4aj9.ap-south-1.rds.amazonaws.com
+  port: 3306
+  username: B2B_Admin
+  password: b2b@123
+  connection_method: direct
+  ssh_host: null
+  ssh_port: 22
+  ssh_username: null
+  ssh_password: null
+  ssh_pkey: null
+source: mysql

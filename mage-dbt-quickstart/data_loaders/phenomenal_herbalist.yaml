@@ -1,0 +1,10 @@
+config:
+  database: dhwani_stg
+  host: 5432
+  password: Rahul@1234
+  port: 5432
+  schema: stg
+  username: postgres
+  replication_slot: null
+  publication_name: null
+source: postgresql
