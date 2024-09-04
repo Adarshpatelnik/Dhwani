@@ -1,0 +1,8 @@
+PG_HOST_PORT=5432
+PG_HOST=host.docker.internal
+POSTGRES_DB=dhwani_db
+POSTGRES_PASSWORD=Rahul@1234
+POSTGRES_SCHEMA=stg
+POSTGRES_USER=postgres
+PROJECT_NAME=mage-dbt-quickstart
+ENV=dev
