@@ -59,9 +59,9 @@ default:
   # MySQL
   MYSQL_DATABASE: EIROKID_JANTAROAD_REWA
   MYSQL_HOST: b2b-s360.chpxcjdw4aj9.ap-south-1.rds.amazonaws.com
-  MYSQL_PASSWORD: b2b@123
+  MYSQL_PASSWORD: dhwani123
   MYSQL_PORT: 3306
-  MYSQL_USER: B2B_Admin
+  MYSQL_USER: dhwani_mysql
   # PostgresSQL
   POSTGRES_CONNECT_TIMEOUT: 10
   POSTGRES_DBNAME: dhwani_db

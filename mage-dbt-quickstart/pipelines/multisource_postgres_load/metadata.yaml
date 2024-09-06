@@ -63,7 +63,7 @@ blocks:
   type: data_loader
   upstream_blocks: []
   uuid: api_src_json
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     file_path: data_loaders/mys_pos_pipline_trigger.py
@@ -119,7 +119,7 @@ blocks:
   - flat_file_src
   - api_src_json
   uuid: stg_load_postgres
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     dbt_project_name: dbt/dhwani_dbt
@@ -167,16 +167,17 @@ type: python
 uuid: multisource_postgres_load
 variables_dir: /home/src/mage_data/mage-dbt-quickstart
 widgets:
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
+    buckets: '1'
     chart_style: vertical
     chart_type: bar chart
     group_by:
     - academic_year
     metrics:
-    - aggregation: count
-      column: grand_total
+    - aggregation: count_distinct
+      column: weight_in_kg
     x: x
     y: y
   downstream_blocks: []

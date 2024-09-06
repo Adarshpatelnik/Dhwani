@@ -36,7 +36,963 @@ callbacks: []
 concurrency_config: {}
 conditionals: []
 created_at: '2024-09-04 09:44:05.915429+00:00'
-data_integration: null
+data_integration:
+  catalog:
+    streams:
+    - auto_add_new_fields: false
+      destination_table: CLASS_INFO
+      key_properties:
+      - CLASS_ID
+      metadata:
+      - breadcrumb: []
+        metadata:
+          forced-replication-method: FULL_TABLE
+          inclusion: available
+          schema-name: CLASS_INFO
+          selected: true
+          table-key-properties:
+          - CLASS_ID
+          valid-replication-keys: []
+      - breadcrumb:
+        - properties
+        - CLASS_ID
+        metadata:
+          inclusion: automatic
+          selected: true
+      - breadcrumb:
+        - properties
+        - CLASS_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SECTION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MONTHLY_TUITION_FEES
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - STAFF_ID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_CREATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_UPDATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      replication_method: FULL_TABLE
+      schema:
+        properties:
+          CLASS_ID:
+            type:
+            - string
+          CLASS_NUMBER:
+            type:
+            - 'null'
+            - string
+          MONTHLY_TUITION_FEES:
+            type:
+            - 'null'
+            - integer
+          REC_CREATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          REC_UPDATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          SECTION:
+            type:
+            - string
+          STAFF_ID:
+            type:
+            - 'null'
+            - string
+        type: object
+      stream: CLASS_INFO
+      tap_stream_id: CLASS_INFO
+      unique_conflict_method: UPDATE
+      unique_constraints:
+      - CLASS_ID
+    - auto_add_new_fields: false
+      destination_table: PARENT_PROFILE
+      key_properties:
+      - PARENT_ID
+      metadata:
+      - breadcrumb: []
+        metadata:
+          forced-replication-method: FULL_TABLE
+          inclusion: available
+          schema-name: PARENT_PROFILE
+          selected: true
+          table-key-properties:
+          - PARENT_ID
+          valid-replication-keys: []
+      - breadcrumb:
+        - properties
+        - PARENT_ID
+        metadata:
+          inclusion: automatic
+          selected: true
+      - breadcrumb:
+        - properties
+        - STUDENT_ID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FATHER_NAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FATHER_ADHAR_ID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FATHER_OCCUPATION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FATHER_EDUCATION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FATHER_MOBILE_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FATHER_INCOME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MOTHER_NAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MOTHER_ADHAR_ID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MOTHER_OCCUPATION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MOTHER_EDUCATION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MOTHER_MOBILE_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MOTHER_INCOME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - PRIMARY_CONTACT_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_CREATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_UPDATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      replication_method: FULL_TABLE
+      schema:
+        properties:
+          FATHER_ADHAR_ID:
+            type:
+            - 'null'
+            - integer
+          FATHER_EDUCATION:
+            type:
+            - 'null'
+            - string
+          FATHER_INCOME:
+            type:
+            - 'null'
+            - integer
+          FATHER_MOBILE_NUMBER:
+            type:
+            - 'null'
+            - string
+          FATHER_NAME:
+            type:
+            - string
+          FATHER_OCCUPATION:
+            type:
+            - 'null'
+            - string
+          MOTHER_ADHAR_ID:
+            type:
+            - 'null'
+            - integer
+          MOTHER_EDUCATION:
+            type:
+            - 'null'
+            - string
+          MOTHER_INCOME:
+            type:
+            - 'null'
+            - integer
+          MOTHER_MOBILE_NUMBER:
+            type:
+            - 'null'
+            - string
+          MOTHER_NAME:
+            type:
+            - string
+          MOTHER_OCCUPATION:
+            type:
+            - 'null'
+            - string
+          PARENT_ID:
+            type:
+            - string
+          PRIMARY_CONTACT_NUMBER:
+            type:
+            - 'null'
+            - string
+          REC_CREATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          REC_UPDATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          STUDENT_ID:
+            type:
+            - string
+        type: object
+      stream: PARENT_PROFILE
+      tap_stream_id: PARENT_PROFILE
+      unique_conflict_method: UPDATE
+      unique_constraints:
+      - PARENT_ID
+    - auto_add_new_fields: false
+      destination_table: STUDENT_HEALTH
+      key_properties: []
+      metadata:
+      - breadcrumb: []
+        metadata:
+          forced-replication-method: FULL_TABLE
+          inclusion: available
+          schema-name: STUDENT_HEALTH
+          selected: true
+          table-key-properties: []
+          valid-replication-keys: []
+      - breadcrumb:
+        - properties
+        - STUDENT_ID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - WEIGHT_IN_KG
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - HEIGHT_IN_CM
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - BMI
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - VISION_LEFT
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - VISION_RIGHT
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ALLERGIES
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MEDICAL_HISTORY
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - LAST_CHECKUP_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - DOCTOR_NAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - DOCTOR_CONTACT_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      replication_method: FULL_TABLE
+      schema:
+        properties:
+          ALLERGIES:
+            type:
+            - 'null'
+            - string
+          BMI:
+            type:
+            - 'null'
+            - integer
+          DOCTOR_CONTACT_NUMBER:
+            type:
+            - 'null'
+            - integer
+          DOCTOR_NAME:
+            type:
+            - 'null'
+            - string
+          HEIGHT_IN_CM:
+            type:
+            - 'null'
+            - integer
+          LAST_CHECKUP_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          MEDICAL_HISTORY:
+            type:
+            - 'null'
+            - string
+          STUDENT_ID:
+            type:
+            - 'null'
+            - string
+          VISION_LEFT:
+            type:
+            - 'null'
+            - string
+          VISION_RIGHT:
+            type:
+            - 'null'
+            - string
+          WEIGHT_IN_KG:
+            type:
+            - 'null'
+            - number
+        type: object
+      stream: STUDENT_HEALTH
+      tap_stream_id: STUDENT_HEALTH
+      unique_conflict_method: UPDATE
+    - auto_add_new_fields: false
+      destination_table: STUDENT_PROFILE
+      key_properties:
+      - STUDENT_ID
+      metadata:
+      - breadcrumb: []
+        metadata:
+          forced-replication-method: FULL_TABLE
+          inclusion: available
+          schema-name: STUDENT_PROFILE
+          selected: true
+          table-key-properties:
+          - STUDENT_ID
+          valid-replication-keys: []
+      - breadcrumb:
+        - properties
+        - STUDENT_ID
+        metadata:
+          inclusion: automatic
+          selected: true
+      - breadcrumb:
+        - properties
+        - STUDENT_USER_ID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - PARENT_ID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FIRST_NAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MIDDLE_NAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - LAST_NAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - GENDER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CONTACT_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ADDRESS
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CITY
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - STATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - POSTAL_CODE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ACADEMIC_YEAR
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - DATE_OF_BIRTH
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMAIL
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ENROLLMENT_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - NATIONALITY
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ORPHAN_STUDENT
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - BIRTH_CERTIFICATE_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CAST
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - RELIGION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - BLOOD_GROUP
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - DISEASE_IF_ANY
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ADDITIONAL_NOTE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - IDENTIFICATION_MARK
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - PREVIOUS_SCHOOL
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMERGENCY_CONTACT_NAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMERGENCY_CONTACT_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - AADHAAR_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - IS_ACTIVE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_CREATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_UPDATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SCHOOL_INFO
+        metadata:
+          inclusion: available
+          selected: true
+      replication_method: FULL_TABLE
+      schema:
+        properties:
+          AADHAAR_NUMBER:
+            type:
+            - 'null'
+            - integer
+          ACADEMIC_YEAR:
+            type:
+            - 'null'
+            - string
+          ADDITIONAL_NOTE:
+            type:
+            - 'null'
+            - string
+          ADDRESS:
+            type:
+            - 'null'
+            - string
+          BIRTH_CERTIFICATE_NUMBER:
+            type:
+            - 'null'
+            - string
+          BLOOD_GROUP:
+            type:
+            - 'null'
+            - string
+          CAST:
+            type:
+            - 'null'
+            - string
+          CITY:
+            type:
+            - 'null'
+            - string
+          CONTACT_NUMBER:
+            type:
+            - 'null'
+            - string
+          DATE_OF_BIRTH:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          DISEASE_IF_ANY:
+            type:
+            - 'null'
+            - string
+          EMAIL:
+            type:
+            - 'null'
+            - string
+          EMERGENCY_CONTACT_NAME:
+            type:
+            - 'null'
+            - string
+          EMERGENCY_CONTACT_NUMBER:
+            type:
+            - 'null'
+            - integer
+          ENROLLMENT_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          FIRST_NAME:
+            type:
+            - 'null'
+            - string
+          GENDER:
+            type:
+            - 'null'
+            - string
+          IDENTIFICATION_MARK:
+            type:
+            - 'null'
+            - string
+          IS_ACTIVE:
+            type:
+            - 'null'
+            - string
+          LAST_NAME:
+            type:
+            - 'null'
+            - string
+          MIDDLE_NAME:
+            type:
+            - 'null'
+            - string
+          NATIONALITY:
+            type:
+            - 'null'
+            - string
+          ORPHAN_STUDENT:
+            type:
+            - 'null'
+            - string
+          PARENT_ID:
+            type:
+            - string
+          POSTAL_CODE:
+            type:
+            - 'null'
+            - integer
+          PREVIOUS_SCHOOL:
+            type:
+            - 'null'
+            - string
+          REC_CREATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          REC_UPDATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          RELIGION:
+            type:
+            - 'null'
+            - string
+          SCHOOL_INFO:
+            type:
+            - 'null'
+            - string
+          STATE:
+            type:
+            - 'null'
+            - string
+          STUDENT_ID:
+            type:
+            - string
+          STUDENT_USER_ID:
+            type:
+            - string
+        type: object
+      stream: STUDENT_PROFILE
+      tap_stream_id: STUDENT_PROFILE
+      unique_conflict_method: UPDATE
+      unique_constraints:
+      - STUDENT_ID
+    - auto_add_new_fields: false
+      destination_table: SUBJECT
+      key_properties:
+      - SUBJECT_ID
+      metadata:
+      - breadcrumb: []
+        metadata:
+          forced-replication-method: FULL_TABLE
+          inclusion: available
+          schema-name: SUBJECT
+          selected: true
+          table-key-properties:
+          - SUBJECT_ID
+          valid-replication-keys: []
+      - breadcrumb:
+        - properties
+        - SUBJECT_CODE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SUBJECT_ID
+        metadata:
+          inclusion: automatic
+          selected: true
+      - breadcrumb:
+        - properties
+        - CLASS_NUMBER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SUBJECT
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_CREATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_UPDATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      replication_method: FULL_TABLE
+      schema:
+        properties:
+          CLASS_NUMBER:
+            type:
+            - string
+          REC_CREATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          REC_UPDATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          SUBJECT:
+            type:
+            - 'null'
+            - string
+          SUBJECT_CODE:
+            type:
+            - string
+          SUBJECT_ID:
+            type:
+            - integer
+        type: object
+      stream: SUBJECT
+      tap_stream_id: SUBJECT
+      unique_conflict_method: UPDATE
+      unique_constraints:
+      - SUBJECT_ID
+    - auto_add_new_fields: false
+      destination_table: CLASS_DETAIL
+      key_properties:
+      - CLASS_ID
+      - STUDENT_ID
+      metadata:
+      - breadcrumb: []
+        metadata:
+          forced-replication-method: FULL_TABLE
+          inclusion: available
+          schema-name: CLASS_DETAIL
+          selected: true
+          table-key-properties:
+          - STUDENT_ID
+          - CLASS_ID
+          valid-replication-keys: []
+      - breadcrumb:
+        - properties
+        - STUDENT_ID
+        metadata:
+          inclusion: automatic
+          selected: true
+      - breadcrumb:
+        - properties
+        - CLASS
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SECTION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CLASS_ID
+        metadata:
+          inclusion: automatic
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_CREATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REC_UPDATE_DATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SESSION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - isPromoted
+        metadata:
+          inclusion: available
+          selected: true
+      replication_method: FULL_TABLE
+      schema:
+        properties:
+          CLASS:
+            type:
+            - string
+          CLASS_ID:
+            type:
+            - string
+          REC_CREATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          REC_UPDATE_DATE:
+            format: date-time
+            type:
+            - 'null'
+            - string
+          SECTION:
+            type:
+            - string
+          SESSION:
+            type:
+            - 'null'
+            - string
+          STUDENT_ID:
+            type:
+            - string
+          isPromoted:
+            type:
+            - 'null'
+            - string
+        type: object
+      stream: CLASS_DETAIL
+      tap_stream_id: CLASS_DETAIL
+      unique_conflict_method: UPDATE
+      unique_constraints:
+      - CLASS_ID
+      - STUDENT_ID
 description: this pipleine will load data from mysql to postgres stg env
 executor_config: {}
 executor_count: 1
